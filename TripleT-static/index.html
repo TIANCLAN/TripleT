@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>欢迎光临Triple-T</title>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" href="css/foot.css" />
+	<link rel="stylesheet" href="css/head.css" />
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="js/base-v1.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery-1.2.6.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/cookie.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/common.js" charset="utf-8"></script>
+
+	<script type="text/javascript" src="js/base-2011.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery-extend.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/logout.js"></script>
+	<script type="text/javascript" src="js/lib-v1.js" charset="utf-8"></script>
+
+	<script type="text/javascript" src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="js/plugins.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<link href="css/prodList.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+
+</head>
+
+<body>
+	<script type="text/javascript">
+		window.onload = function () {
+			$(document).ready(function () {
+				$("#header").load("head.html");
+			});
+			var userId = "";
+			var _ticket = $.cookie("EM_TICKET");
+			if (!_ticket) {
+				return;
+			}
+			// alert(_ticket);
+			//当dataType类型为jsonp时，jQuery就会自动在请求链接上增加一个callback的参数
+			$.ajax({
+				url: "http://www.triplet.com/user/query/" + _ticket,
+				dataType: "json",
+				type: "GET",
+
+				success: function (data) {
+
+					if (data.status == 200) {
+						// alert("好啊2");
+						var _data = JSON.parse(data.data);//jackson
+
+						var html = "<span id=\"head_span\"><a href=\"javascript:void(0)\" class=\"link-logout\" onclick='logout()' ><span class=\"rect\"></span> <span class=\"circle\"></span>退出</a></span>";
+						userId = _data.userId;
+						$("#loginbar").html(html);
+					}
+
+				},
+				error: function () {
+					('index error.');
+				}
+			});
+		}
+		function search(a) {
+			var query = document.getElementById(a).value;
+
+			window.location.href = "./search.html?query=" + query;
+
+		}
+
+
+	</script>
+	<script>
+		// Hide Header on on scroll down
+		var didScroll;
+		var lastScrollTop = 0;
+		var delta = 5;
+		var navbarHeight = $('header').outerHeight();
+
+		$(window).scroll(function (event) {
+			didScroll = true;
+		});
+
+		setInterval(function () {
+			if (didScroll) {
+				hasScrolled();
+				didScroll = false;
+			}
+		}, 250);
+
+		function hasScrolled() {
+			var st = $(this).scrollTop();
+
+			// Make sure they scroll more than delta
+			if (Math.abs(lastScrollTop - st) <= delta)
+				return;
+
+			// If they scrolled down and are past the navbar, add class .nav-up.
+			// This is necessary so you never see what is "behind" the navbar.
+			if (st > lastScrollTop && st > navbarHeight) {
+				// Scroll Down
+				$('header').removeClass('nav-down').addClass('nav-up');
+			} else {
+				// Scroll Up
+				if (st + $(window).height() < $(document).height()) {
+					$('header').removeClass('nav-up').addClass('nav-down');
+				}
+			}
+
+			lastScrollTop = st;
+		}
+	</script>
+	<div class="topDiv" id="header">
+
+	</div>
+	<div class="slider">
+		<div class="Modern-Slider content-section" id="top">
+			<!-- Item -->
+			<div class="item item-1">
+				<div class="img-fill">
+					<div class="image"></div>
+					<div class="info">
+						<div>
+							<h1>Overcook2<br>All you can eat!</h1>
+							<p>胡闹厨房：是时候系好你的围裙该拯救这个世界了！<br>《胡闹厨房2》是由独立游戏开发商Ghost Town Games制作厨房模拟游戏。
+								<br>游戏延续了前作的风格，玩家将会面临各种全新场景和刁钻客人的新挑战。
+							</p>
+							<div class="white-button button">
+								<a href="#featured">Discover More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // Item -->
+			<!-- Item -->
+			<div class="item item-2">
+				<div class="img-fill">
+					<div class="image"></div>
+					<div class="info">
+						<div>
+							<h1>Minute of Islands <br> Islands</h1>
+							<p>你是一位熟练的修补工，Mo。你与你的家人生活在一个田园群岛上，这里曾经居住着一个古老的神秘巨人种族。
+								<br>现在岛屿深处生锈腐坏，Mo发誓要及时修补隐藏的引擎，但这一切真的是她想要的吗？
+							</p>
+
+							<div class="white-button button">
+								<a href="#featured">Share More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // Item -->
+			<!-- Item -->
+			<div class="item item-3">
+				<div class="img-fill">
+					<div class="image"></div>
+					<div class="info">
+						<div>
+							<h1>Pokemon!<br>All edition</h1>
+							<p>《宝可梦》（曾译名《精灵宝可梦》）另有常见非官方译名：《口袋妖怪》、《宠物小精灵》、《神奇宝贝》。
+								<br>是由Game Freak和Creatures株式会社开发，任天堂发行的系列游戏，是宝可梦媒体作品的主要部分。
+							</p>
+
+							<div class="white-button button">
+								<a href="#featured">Learn More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // Item -->
+		</div>
+	</div>
+</body>
+
+</html>

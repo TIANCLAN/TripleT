@@ -1,0 +1,79 @@
+body{
+	background-image: url("../img/login/dl.png");
+	background-position: top;
+	font-family: "微软雅黑";
+	background-repeat:no-repeat;
+	margin:0px;
+}
+
+form{
+	width:400px;
+	height:400px;
+	margin:0px auto 0px;
+	border:4px solid transparent;
+	
+}
+
+form input[type='text'],form input[type='password']{
+	border: 1px solid #CCCCCC;
+	height: 25px;
+	line-height:25px;
+	vertical-align: middle;
+}
+.kuang{
+	width:350px;
+	height:380px;
+	margin:150px 100px 0;
+	border:4px solid #000000;
+	border-radius:25px;
+	background-color:#FFFFFF;
+	box-shadow:0 0 9px 5px #999;
+}
+h1{
+	width:300px;
+	margin-left:50px;
+	text-align: center;
+	color:#FFD700;
+	text-shadow:#990000 0 0 3px;
+    font-size:60px;
+}
+
+table{
+	height:250px;
+	margin: 0 auto;
+
+}
+td{
+	padding-top: 10px;
+	height:60px;
+	text-align:center;
+}
+.tdx{
+	
+	font-size: 16px;
+	text-align: right;
+	font-family: "黑体";
+	height:15px;
+}
+input{
+	border: 2px solid #cccccc;
+	width: 150px;
+	height: 25px;
+	border-radius:25px;
+}
+
+input[type='submit']{
+	background-image: url("../img/login/dlan01.jpg");
+	margin-top: 12px;
+	width:80px;
+	height:38px;
+	line-height:38px;
+	border-style:none;
+	font-size:17px;
+	font-weight:bold;
+	color:white;
+	cursor: pointer;
+}
+input[type='submit']:hover{
+	background-image: url("../img/login/dlan02.jpg");
+}

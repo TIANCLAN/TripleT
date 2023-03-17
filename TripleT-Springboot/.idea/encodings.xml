@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/config-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easymall-common-rediscluster" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easymall-common-repository" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easymall-common-resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easymall-micro-zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-cart" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-cart/src/main/java/cn/edu/scnu/cart/controller/CartController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-cart/src/main/java/cn/edu/scnu/cart/shiro/ShiroConfig.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/admin" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/error" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/head/TripleTLogo.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/head/close.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/head/loading.gif" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/head/logo.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/head/next.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/head/prev.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/head/qr.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/index" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/login" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/orderList" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/prodInfo" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/prodlist" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/regist" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/img/shangchuanBg.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/js/echarts.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/js/jquery-1.4.2.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-echarts/src/main/webapp/views" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-use" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-use/src/main/java/cn/edu/scnu/user/controller/UserController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-use/src/main/java/cn/edu/scnu/user/service/UserService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-microservice-use/src/main/java/cn/edu/scnu/user/shiro/UserRealm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/easymall-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seckill" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-redis-test01" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

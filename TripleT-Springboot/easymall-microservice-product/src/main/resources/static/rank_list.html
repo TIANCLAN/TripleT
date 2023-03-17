@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <link href="css/prodList.css" rel="stylesheet" type="text/css" th:href="@{/css/prodList.css}"/>
+</head>
+<body>
+<div th:replace="_head :: .head"></div>
+
+<div class="page-content">
+    <section id="blog" class="content-section">
+        <div class="section-heading">
+            <h1>Hottt<br/><em>Game 热门游戏</em></h1>
+            <p>在Triple-T游戏推荐平台中，您能寻找到大部分感兴趣的游戏相关的资源。
+                <br/>祝您使用愉快。</p>
+        </div>
+        <div class="section-content">
+            <div class="tabs-content">
+                <div class="wrapper">
+                    <section id="first-tab-group" class="tabgroup">
+                        <div id="tab1">
+                            <ul>
+                                <li th:each="prod,status:${ products }" >
+                                        <span th:if="${status.index==1}">
+                                            <div class="item" style="height:550px"></div>
+                                            <div class="item" style="position: fixed;left:100px;margin-top:80px;">
+                                                <a> <img th:src="@{/img/prodlist/yj.png}"
+                                                     style="width:100px;height:100px;margin-left:80px" /> </a>
+                                                <br/>
+                                                <a th:href="@{/products/prodInfo(pid=${prod.id})}"
+                                                   target="_blank">
+                                                    <img th:src="${prod.imgurl}"
+                                                         style="width:260px;padding-bottom:15px" /> </a>
+                                                <div class="text-content" style="text-align:center">
+                                                    <br/><br/><br/><br/>
+                                                    <a th:href="@{/products/prodInfo(pid=${prod.id})}"
+                                                       target="_blank"><h4 th:text="${ prod.name }"><br/></h4>
+                                                    </a>
+                                                    <span>￥<div id="prod_price_div" th:text="${prod.price}"></div>元</span><br/>
+                                                    <span><div>133人评价</div></span>
+
+                                                </div>
+                                            </div>
+                                        </span>
+                                    <span th:if="${status.index==0}">
+                                            <div class="item" style="height:550px"></div>
+                                            <div class="item" style="position: fixed;left:400px;margin-top:-30px;">
+                                                <a><img th:src="@{/img/prodlist/gz.png}"
+                                                     style="width:130px;height:130px;margin-left:80px" /> </a>
+                                                <br/><br/>
+                                                <a th:href="@{/products/prodInfo(pid=${prod.id})}"
+                                                   target="_blank">
+                                                    <img th:src="${prod.imgurl}"
+                                                         style="width:300px;padding-bottom:15px" /> </a>
+                                                <div class="text-content" style="text-align:center;">
+                                                    <br/><br/><br/>
+                                                    <div>
+                                                        <a th:href="@{/products/prodInfo(pid=${prod.id})}"
+                                                           target="_blank"><h4 th:text="${ prod.name }"><br/></h4>
+                                                        </a></div>
+                                                    <span>￥<div id="prod_price_div" th:text="${prod.price}"></div>元</span><br/>
+                                                    <span><div>133人评价</div></span>
+                                                </div>
+                                            </div>
+                                        </span>
+
+                                    <span th:if="${status.index==2}">
+                                            <div class="item" style="height:550px"></div>
+                                            <div class="item" style="position: fixed;left:750px;margin-top:80px;">
+                                                <div>
+                                                    <a><img th:src="@{/img/prodlist/jj.png}"
+                                                         style="width:100px;height:100px;margin-left:80px" /> </a>
+                                                    <br/><br/>
+                                                    <a th:href="@{/products/prodInfo(pid=${prod.id})}"
+                                                       target="_blank">
+                                                        <img th:src="${prod.imgurl}"
+                                                             style="width:260px;padding-bottom:15px" /> </a>
+                                                </div>
+                                                <div class="text-content" style="text-align:center">
+                                                    <br/><br/>
+                                                    <a th:href="@{/products/prodInfo(pid=${prod.id})}"
+                                                       target="_blank"><h4 th:text="${ prod.name }"><br/></h4>
+                                                    </a>
+                                                        <span>￥<div id="prod_price_div" th:text="${prod.price}"></div>元</span><br/>
+                                                    <span><div>133人评价</div></span>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    <span th:if="${status.index>=3}">
+                                            <div style="font-size:25px;font-family:微软雅黑;font-weight:600;width:5%;text-align:center;background:#343434;color:#ffff;border:1px solid #cccccc" th:text="${status.index+1}">
+                                                </div>
+                                            <div class="item">
+
+                                                <a th:href="@{/products/prodInfo(pid=${prod.id})}"
+                                                   target="_blank">
+                                                    <img th:src="${prod.imgurl}"
+                                                         style="width:250px;" /> </a>
+                                                <div class="text-content">
+                                                    <a th:href="@{/products/prodInfo(pid=${prod.id})}"
+                                                       target="_blank"><h4 th:text="${ prod.name }"><br/></h4>
+                                                    </a>
+                                                    <span>￥<div id="prod_price_div" th:text="${prod.price}"></div>元</span><br/>
+                                                    <span><div>133人评价</div></span>
+                                                    <div style="width:100%;">
+                                                        <p style="color:#cc9933;font-size:1.3em;font-weight:bold;" th:text="${prod.description }"></p>
+                                                    </div>
+                                                    <div class="accent-button button">
+                                                        <a th:href="@{/cart/addCart(pid=1,buyNum=1)}">加入购物车</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </span>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

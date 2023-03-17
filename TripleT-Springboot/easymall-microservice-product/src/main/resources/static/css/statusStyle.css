@@ -1,0 +1,182 @@
+@charset "utf-8";
+body{
+	/*font-family: "微软雅黑";*/
+	font-size:12px;
+	color:#666666;
+}
+
+
+#wrap{
+	border:1px solid transparent;
+	width:98%;
+	float:right;
+	margin-right:2%;
+}
+
+
+#wrap ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#wrap ul li {
+  display: inline-block;
+  text-align: left;
+  
+
+/*   border-bottom: 1px solid #ddd; */
+}
+
+#wrap ul li:last-child {
+  border-bottom: none;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.UserId{
+	width: 10%;
+}
+.UserName{
+	width: 15%;
+}
+.UserNick{
+	width: 15%;
+}
+
+.UserStatus{
+	width: 60%;
+
+}
+
+.prods{
+	/* border:1px solid black; */
+	display:inline-block;
+
+	list-style: none;
+  	margin: 0px;
+  	padding: 0px;
+  	height: 45%;
+ 	width: 100%;
+  	background-color: #eee;
+  	border-bottom: 1px solid #45489a;
+}
+.prods li{
+	display: table;
+  	text-align: center;
+  	float: left;
+  	margin: 0;
+  	padding: 0;
+  	/* border-bottom: 1px solid #ddd; */
+  	
+}
+.li_prod {
+	width:30%;
+  	vertical-align:middle;
+	display:table-cell;
+/* 	border:1px solid black; */
+  	
+}
+
+.li_id{
+	width:10%;
+}
+
+.li_id h4 {
+	text-align:center;
+  padding-top: 7.5px;
+  margin-top: 5%;
+  margin-bottom: 5px;
+  font-size: 21px;
+  font-weight: 600;
+  color: #232323;
+  letter-spacing: 0.5px;
+}
+
+.li_name{
+	width:15%;
+
+	
+}
+.li_name h4 {
+	vertical-align:middle;
+	text-align:center;
+  margin-top: 10%;
+  margin-bottom: 5px;
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.li_nickname{
+	width:15%;
+
+}
+.li_nickname h4 {
+	vertical-align:middle;
+	text-align:center;
+  	margin-top: 13%;
+  	margin-bottom: 5px;
+  	font-size:1.2em;
+  	font-weight: 600;
+  	letter-spacing: 0.5px;
+}
+
+
+
+.li_status{
+	width:15%;
+
+
+}
+.li_status h4 {
+	vertical-align:middle;
+	text-align:center;
+  	margin-top: 10%;
+  	margin-bottom: 5px;
+  	font-size:1.2em;
+  	font-weight: 600;
+  	letter-spacing: 0.5px;
+}
+.li_change{
+	width:60%;
+}
+
+.li_change div{
+	display:inline;
+	margin-left:9%;
+	
+}
+.money-button{
+	vertical-align:middle;
+	text-align:center;
+	margin-top:30%;
+}
+
+.money-button a {
+	border-radius:8%;
+  	font-size: 1.2em;
+  	font-weight: 600;
+  	color: #45489a;
+  	text-transform: capitalize;
+  	background-color: #fff;
+  	display: inline-block;
+ 	 height: 50xp;
+ 	 line-height: 40px;
+ 	 padding: 0px 20px;
+ 	 letter-spacing: 0.25px;
+ 	 text-decoration: none;
+ 	 transition: all 0.3s;
+}
+.money-button a:hover {
+  background-color: #45489a;
+  color: #fff;
+}
+
+
+
+
+
+

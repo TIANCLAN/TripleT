@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>商品列表</title>
+    <link href="css/prodList.css" rel="stylesheet" type="text/css" th:href="@{/css/prodList.css}"/>
+    <script src="../js/jquery-1.4.2.js"></script>
+    <script src="../js/prod_list.js">
+
+    </script>
+
+    <style>
+        .page_btn {
+            padding-top: 20px;
+        }
+
+        .num {
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="_head :: .head"></div>
+
+<div class="page-content">
+    <section id="blog" class="content-section">
+        <div class="section-heading">
+            <h1>Your<br/><em>Game 游戏</em></h1>
+            <p>在Triple-T游戏推荐平台中，您能寻找到大部分感兴趣的游戏相关的资源。
+                <br/>祝您使用愉快。</p>
+        </div>
+        <div class="section-content">
+            <div class="tabs-content">
+                <div class="wrapper">
+                    <div id="content">
+                        <div id="search_div">
+                            <form class="content_form" method="post" th:action="@{/products/prodlist}">
+                                <div>
+                                    <span class="input_span" style="margin-left:-3%;">游戏名：<input type="text" name="name"
+                                                                                                 th:text="${name}"/></span>
+                                    <span class="input_span">游戏种类：</span>
+                                    <span>
+											<select name="category"
+                                                    style="border-radius:10px; font-size:0.95em; color:#7a7a7a;">
+											<option value=""
+                                                    style="font-weight:bolder; font-size:0.95em; color:#7a7a7a;">不限</option>
+											<div th:each="c:${categories}">
+				                                <option th:text="${c}"></option>
+                                            </div>
+											</select>
+										</span>
+
+
+                                    <span class="input_span">游戏价格区间：</span>
+                                    <span><input type="text" name="minprice" th:text="${minprice}"/>
+										- <input type="text" name="maxprice" th:text="${maxprice}"/></span>
+
+                                    <span><input type="submit" value="查 询" />
+										</span>
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+
+                    <section id="first-tab-group" class="tabgroup">
+                        <div id="tab1">
+                            <ul id="list">
+
+                                <li th:each="prod:${ products }">
+                                    <div class="item">
+                                        <a th:href="@{/products/prodInfo(pid=${prod.id})}"
+                                           target="_blank">
+                                            <img th:src="${prod.imgurl}"
+                                                 style="width:270px;"/> </a>
+                                        <div class="text-content">
+                                            <a th:href="@{/products/prodInfo(pid=${prod.id})}"
+                                               target="_blank"><h4 th:text="${ prod.name }"></h4>
+                                            </a>
+                                            <span><div id="prod_price_div" th:text="|￥${prod.price}元|"></div></span><br/>
+                                            <span><div>133人评价</div></span><br/>
+                                            <span><div th:text="|开发商：${prod.developer }|"></div></span><br/>
+                                            <span><div></div><div th:text="|发行商：${prod.publisher}|"> </div></span><br/>
+                                            <span><div></div><div th:text="|支持终端:${prod.controller }|"></div></span><br/>
+                                            <div style="width:900px;">
+                                                <p style="color:#cc9933;font-size:1.3em;font-weight:bold;'" th:text="${prod.description }">
+                                                    </p>
+                                            </div>
+                                            <div class="accent-button button" >
+                                               <a th:onclick="|addCartOne(${prod.id})|">加入购物车</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="page_btn">
+
+                            <span class="accent-button button"><a class="first">首页</a></span>
+                            <span class="accent-button button"><a class="prev">上一页</a></span>
+                            <span class="num">
+						              <span class="current_page" style="font-size: 18px;">1</span>
+						              <span style="padding:0 3px;font-size: 18px;">/</span>
+						              <span class="total" style="font-size: 18px;"></span>
+						             </span>
+                            <span class="accent-button button"><a class="next">下一页</a></span>
+                            <span class="accent-button button"><a class="last">末页</a></span>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+</body>
+</html>

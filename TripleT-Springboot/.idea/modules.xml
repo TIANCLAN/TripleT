@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymall-common-rediscluster/easymall-common-rediscluster.iml" filepath="$PROJECT_DIR$/easymall-common-rediscluster/easymall-common-rediscluster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymall-common-repository/easymall-common-repository.iml" filepath="$PROJECT_DIR$/easymall-common-repository/easymall-common-repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymall-common-resources/easymall-common-resources.iml" filepath="$PROJECT_DIR$/easymall-common-resources/easymall-common-resources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymall-micro-zuul/easymall-micro-zuul.iml" filepath="$PROJECT_DIR$/easymall-micro-zuul/easymall-micro-zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymall-microservice-cart/easymall-microservice-cart.iml" filepath="$PROJECT_DIR$/easymall-microservice-cart/easymall-microservice-cart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymall-microservice-order/easymall-microservice-order.iml" filepath="$PROJECT_DIR$/easymall-microservice-order/easymall-microservice-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymall-microservice-product/easymall-microservice-product.iml" filepath="$PROJECT_DIR$/easymall-microservice-product/easymall-microservice-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymall-microservice-use/easymall-microservice-use.iml" filepath="$PROJECT_DIR$/easymall-microservice-use/easymall-microservice-use.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymall-parent/easymall-parent.iml" filepath="$PROJECT_DIR$/easymall-parent/easymall-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymall-microservice-echarts/echarts.iml" filepath="$PROJECT_DIR$/easymall-microservice-echarts/echarts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server2/eureka-server2.iml" filepath="$PROJECT_DIR$/eureka-server2/eureka-server2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-redis-test01/springboot-redis-test01.iml" filepath="$PROJECT_DIR$/springboot-redis-test01/springboot-redis-test01.iml" />
+    </modules>
+  </component>
+</project>

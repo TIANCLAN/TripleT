@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>添加商品</title>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<link href="../css/managestyle.css" rel="stylesheet" type="text/css" th:href="@{/css/managestyle.css}" />
+		<link href="../css/addPro.css" rel="stylesheet" type="text/css" th:href="@{/css/addPro.css}" />
+		
+	</head>
+	<body>
+	<div class="left">
+		<div th:replace="admin/_left :: .myleft"></div>
+		</div>
+	<section id="blog" class="content-section" >
+		<div class="section-heading">
+			<h1>Category<br /><em>Add</em></h1>
+			<p>在Triple-T游戏推荐平台中，您能寻找到大部分感兴趣的游戏相关的资源。
+				<br />祝您使用愉快。</p>
+		</div>
+	<div class="content">
+		
+	<div class="right" >	
+	<div class="addprod">
+	<!--<sp:useBean id="category"  class="easymall.po.Category" scope="request" ></jsp:useBean>-->
+		<!--enctype="multipart/form-data"-->
+	<form method="POST"  th:action="@{/products/admin/savecate}">
+		<fieldset class="add">
+		<legend>添加一个游戏种类</legend>
+		<p>
+            <label>种 &nbsp;类 &nbsp;&nbsp;I &nbsp;&nbsp;D&nbsp;:</label>
+            <input name="id"/>
+        </p>	
+		<p>
+            <label>种 &nbsp;类 &nbsp;名 &nbsp;称:</label>
+            <input name="name"/>
+        </p><p>
+            <label >种&nbsp; 类 &nbsp;描 &nbsp;述:</label>
+            <textarea style="border:2px solid #ccc;margin-left:2%;width:60%;" name="description"/>
+        </p><p id="buttons" style="height:20%">
+            <input id="submit" type="submit" value="添加" />
+            
+            <button id="exit">
+            	<a href="./catelist">
+            		退出
+            	</a>
+            </button>
+        </p>
+        
+    	</fieldset>
+    	<!-- 取出所有验证错误 -->
+    	<!--<errors name="*"/>-->
+	</form>
+	</div>
+	</div><!-- right结束 -->
+	</div><!-- content结束 -->		
+	</section>
+	
+	</body>
+</html>

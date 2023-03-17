@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/userStyle.css" />
+    <script  src="js/vue.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/qs@6.10.5/dist/qs.js"></script>
+   <script type="text/javascript" src="js/base-v1.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-1.2.6.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/cookie.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/base-2011.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-extend.js"></script>
+    <script type="text/javascript" src="js/lib-v1.js" charset="utf-8"></script>
+   
+
+
+   <script type="text/javascript">
+			
+				$(document).ready(function(){
+     				$("#header").load("left.html");
+      			});
+      		
+			
+			
+		</script>
+</head>
+<body>
+	
+	<div class="topDiv" id="header" >
+ 
+</div>
+<div class="page-content"> 
+<section id="blog" class="content-section" >
+	<div class="section-heading">
+		<h1>Users<br><em>Management用户管理</em></h1>
+		<p>在Triple-T游戏推荐平台中，您能寻找到大部分感兴趣的游戏相关的资源。 
+		<br>祝您使用愉快。</p>
+	</div>
+	<div class="section-content">
+		<div class="tabs-content">
+			<div class="wrapper" >
+				<ul class="tabs clearfix" style="box-shadow: 0 0 10px #343434;" >
+							<li class="UserId"><div>用户ID</div></li>
+							<li class="UserName"><div>用户名</div></li>
+							<li class="UserNick"><div>昵称</div></li>
+							<li class="UserEmail"><div>邮箱地址</div></li>
+							<li class="UserStatus"><div>是否激活</div></li>
+							<li class="UserOrder"><div>查看交易</div></li>
+							<li class="UserClose"><div>注销</div></li>
+						</ul>
+				<div id="wrap" style="box-shadow: 0 0 10px #343434;">
+						<div id="users-Vue">
+                            <ul class="prods" v-for="(user,index) in users">
+                            	<li class="li_id"><h4 style="font-size: 5px;">{{user.userId}}</h4></li>
+                            	<li class="li_name"><h4>{{user.userName}}</h4></li>
+                            	<li class="li_nickname"><h4>{{user.userNickname}}</h4></li>
+                            	<li class="li_email"><h4>{{user.userEmail}}</h4></li>
+                            	<li class="li_status"><h4>是</h4></li>
+                            	<li class="li_check">
+                            		<div class="money-button"><a href="http://www.triplet.com/showUserOrder.html?userId=user.userId">查看</a></div>
+                            	</li>`
+                            	<li class="li_close">
+                            		<div><a href="http://www.triplet.com/myusers.html" @click="del(user.userId)">
+                            			<img class="logout" src="../img/admin/logout.png"  /></a></div>
+                            	</li>
+                            </ul>
+
+    					</div>
+						
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</div>
+    <script type="text/javascript" src="js/myusers.js"></script>
+
+
+</body>
+</html>
+

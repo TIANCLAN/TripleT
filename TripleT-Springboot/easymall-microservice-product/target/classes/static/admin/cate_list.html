@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>游戏种类</title>
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+    <meta charset="utf-8" />
+    <link href="../css/cateStyle.css" rel="stylesheet" type="text/css" th:href="@{/css/cateStyle.css}" />
+
+</head>
+<body>
+<div th:include="admin/_left :: .myleft"></div>
+<div class="page-content">
+    <section id="blog" class="content-section">
+        <div class="section-heading">
+            <h1>Categories<br/><em>Management种类管理</em></h1>
+            <p>在Triple-T游戏推荐平台中，您能寻找到大部分感兴趣的游戏相关的资源。
+                <br/>祝您使用愉快。</p>
+        </div>
+        <div class="section-content">
+            <div class="tabs-content">
+                <div class="wrapper">
+                    <div class="money-button">
+                        <a href="/admin/addcate" th:href="@{/products/admin/addcate}">添加种类</a>
+                    </div>
+
+                    <ul class="tabs clearfix" style="box-shadow: 0 0 10px #343434;">
+                        <li class="CateName">
+                            <div>种类名称</div>
+                        </li>
+                        <li class="CateIntro">
+                            <div>种类概况</div>
+                        </li>
+                        <li class="CateModify">
+                            <div>修改种类</div>
+                        </li>
+                    </ul>
+
+                    <!-- 购物信息 -->
+                    <div id="wrap" style="box-shadow: 0 0 10px #343434;">
+
+
+                        <ul class="prods" th:each="category:${categories}">
+
+
+                            <li class="li_name">
+                                <h4 th:text="${category.name}"></h4>
+                            </li>
+
+
+                            <li class="li_info">
+                                <h4 class="li_price" th:text="${category.description}"></h4><br/>
+                                <!--<div>-->
+                                    <!--<h4 th:if="${category.status==1}">已上架</h4>-->
+                                    <!--<font color="red"><h4 th:if="${category.status==0}">已下架</h4></font>-->
+                                <!--</div>-->
+
+                            </li>
+
+                            <li class="li_button">
+                                <div class="white-button button site" >
+                                    <a th:href="@{/products/admin/showcate(id=${category.id})}">修改</a>
+                                </div>
+                                <div class="white-button button site" >
+                                    <a th:href="@{/products/admin/delcate(id=${category.id})}">删除</a>
+                                </div>
+                            </li>
+
+
+                            <!--<li class="li_button">-->
+                                <!--<div class="white-button button site">-->
+                                    <!--<a href="${ pageContext.request.contextPath }/admin/OnSale?id=${prod.id}">上架</a>-->
+                                <!--</div>-->
+                                <!--<div class="white-button button site">-->
+                                    <!--<a href="${ pageContext.request.contextPath }/admin/OffSale?id=${prod.id}">下架</a>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

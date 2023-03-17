@@ -1,0 +1,162 @@
+@charset "utf-8";
+body{
+	/*font-family: "微软雅黑";*/
+	font-size:12px;
+	color:#666666;
+}
+
+
+#wrap{
+	border:1px solid transparent;
+	width:98%;
+	float:right;
+	margin-right:2%;
+}
+
+
+#wrap ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#wrap ul li {
+  display: inline-block;
+  text-align: left;
+  
+
+/*   border-bottom: 1px solid #ddd; */
+}
+
+#wrap ul li:last-child {
+  border-bottom: none;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+}
+
+.CateName{
+	width: 30%;
+}
+.CateIntro{
+	width: 40%;
+}
+.CateModify{
+	width: 30%;
+}
+
+
+.prods{
+	/* border:1px solid black; */
+	display:inline-block;
+
+	list-style: none;
+  	margin: 0px;
+  	padding: 0px;
+  	height: 45%;
+ 	width: 100%;
+  	background-color: #eee;
+  	border-bottom: 1px solid #45489a;
+}
+.prods li{
+	display: table;
+  	text-align: center;
+  	float: left;
+  	margin: 0;
+  	padding: 0;
+  	/* border-bottom: 1px solid #ddd; */
+  	
+}
+.li_name {
+	width:30%;
+/*   	border:1px solid black; */
+  	vertical-align:middle;
+	display:table-cell;
+/* 	border:1px solid black; */
+  	
+}
+.li_name h4 {
+	text-align:center;
+	vertical-align:middle;
+  padding-top: 7.5px;
+  margin-top: 10%;
+  margin-bottom: 5px;
+  font-size: 21px;
+  font-weight: 600;
+  color: #232323;
+  letter-spacing: 0.5px;
+}
+.li_name span {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #7a7a7a;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.li_info{
+	width:40%;
+	text-align:center;
+	vertical-align:middle;
+	
+/* 	border:1px solid black; */
+	
+	display:inline-block;
+}
+
+.li_info h4 {
+	text-align:center;
+	vertical-align:middle;
+  padding-top: 7.5px;
+  margin-top: 10%;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #7a7a7a;
+  letter-spacing: 0.5px;
+}
+
+
+.li_button{
+	width:30%;
+
+}
+
+.li_button div{
+	text-align:center;
+	margin-top:10%;
+	vertical-align:middle;
+}
+/*总计*/
+
+
+
+.money-button{
+	margin-right:-80%;
+	margin-bottom:1%;
+}
+
+.money-button a {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: capitalize;
+  background-color: #696969;
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0px 25px;
+  letter-spacing: 0.25px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.money-button a:hover {
+  background-color: #232323;
+  color: #fff;
+}
+
+
+
+
+

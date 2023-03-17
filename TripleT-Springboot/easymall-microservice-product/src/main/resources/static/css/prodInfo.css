@@ -1,0 +1,163 @@
+@charset "utf-8";
+body {
+	margin:0px;padding:0px;
+	/*font-family:"黑体";*/
+}
+{
+	border:solid red 1px;
+}
+/*----整体div----------------------------------------------------------------------------*/
+/*商品详情页面样式*/
+#kuang{
+	border: 1px solid transparent;
+}
+#warp{
+	width:1100px;
+	margin:30px 400px;
+	height:650px;
+	border: 3px solid #000000;
+	border-radius:25px;
+	background-image: url("../img/login/dl.png");
+ 	background-position:right;
+}
+/*左半部分*/
+#left{
+	width:40%;
+	height:80%;
+	margin:5% 3%  5%  3% ;
+	float:left;
+	background-color:white;
+	border:3px solid #000000;
+	border-radius:25px;
+	box-shadow:8px 8px 0px #FFD700;
+}
+#left #left_top{
+	width:100%;
+	height:80%;
+	background-color:white;
+	
+	border-radius:25px;
+	text-align: center;
+	
+}
+#left_top img{
+	width:90%;
+	
+	margin:30% 3%  5%  3% ;
+	border-radius:15px;
+	
+}
+#left_bottom{
+	width:100%;
+	height:20%;
+	text-align: center;
+	background-color:white;
+	border-radius:25px;
+}
+#left_bottom img{
+	vertical-align: middle;
+}
+#left_bottom #lf_img{
+	margin-right: 150px;
+}
+#left_bottom #mid_img{
+	border: 2px solid #FF6666;
+}
+#left_bottom #rt_img{
+	margin-left: 150px;
+}
+
+/*右半部分*/
+#right{
+	width:550px;
+	height:650px;
+	
+	float:left;
+}
+#right #right_top{
+		
+	
+}
+#right #right_top #prod_name{
+	display: block;
+	color:#ffffff;
+	font-size:25px;
+	font-weight:600;
+	padding-top:70px;
+	padding-left:30px;
+	/*font-family:"黑体";*/
+}
+#right #right_top #prod_desc{
+	
+	color:#FFD700;
+	font-size:16px;
+	padding-left:30px;
+	/*font-family:"黑体";*/
+	height:35%;
+	
+}
+#right #right_middle{
+	height:340px;
+	line-height:40px;
+	
+}
+#right #right_middle #right_middle_span{
+	display: block;
+	font-weight:550;
+	margin-left:30px;
+	color:#FF4500;
+	font-size:16px;
+}
+#right #right_middle .price_red{
+	color:#ffffff;
+	font-weight:normal;
+}
+#right #right_middle #delNum ,#right #right_middle #addNum{
+	color:#ffffff;
+ 	width:30px;
+ 	height:30px;
+ 	padding:2px 7px;
+ 	text-decoration:none;
+ 	vertical-align: middle;
+ 	background-image: -webkit-linear-gradient(top, #ffd966, #f1c232);
+  	background-image: -moz-linear-gradient(top, #ffd966, #f1c232);
+ 	background-image: -ms-linear-gradient(top, #ffd966, #f1c232);
+  	background-image: -o-linear-gradient(top, #ffd966, #f1c232);
+  	background-image: linear-gradient(to bottom, #ffd966, #f1c232);
+	border-radius:5px;
+	font-size:18px;
+	margin-right:15px;
+	margin-left:15px;
+	
+}
+
+#right #right_middle #buyNumInp{
+	border-radius:5px;
+	color:#000000;
+	width:40px;
+	height:30px;
+	line-height:20px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+#right #right_bottom{
+	height:50px;
+}
+#right #right_bottom .add_cart_but{
+	border-radius:25px;
+	background-color:#FFD700;
+	color:#ffffff;
+	font-size:18px;
+	font-weight:550;
+	box-shadow:3px 3px  #DAA520;
+	width:189px;
+	height:42px;
+	border-style:none;
+	margin:30px;
+}
+
+
+
+

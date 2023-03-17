@@ -1,0 +1,266 @@
+<!-- 蕤芪版本 -->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>我的订单</title>
+    <link rel="stylesheet" href="css/foot.css"/>
+    <link rel="stylesheet" href="css/head.css"/>
+    <link href="css/cart.css" rel="stylesheet" type="text/css"/>
+    <link href="css/orderList.css" rel="stylesheet" type="text/css">
+    <link href="css/templatemo-style.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src="js/base-v1.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-1.2.6.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/cookie.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/base-2011.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-extend.js"></script>
+    <script type="text/javascript" src="js/logout.js"></script>
+    <script type="text/javascript" src="js/lib-v1.js" charset="utf-8"></script>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script type="text/javascript">
+    $(function(){
+    	$(document).ready(function(){
+      			$("#header").load("head.html");
+      		});
+        // alert("好啊1");
+        var userId="";
+        var _ticket = $.cookie("EM_TICKET");
+        if(!_ticket){
+            window.location.href="login.html";
+            return ;
+        }
+        //当dataType类型为jsonp时，jQuery就会自动在请求链接上增加一个callback的参数
+        $.ajax({
+            url : "http://www.triplet.com/user/query/" + _ticket,
+            dataType : "json",
+            type : "GET",
+            success : function(data){
+                if(data.status == 200){
+                    var _data = JSON.parse(data.data);//jackson
+                    if(_data==null){
+                        alert("啥也别说了，你的用户超时了,赶紧查查redis还有数据没有");
+                        window.location.href="./login.html";
+                        return;}
+                    var html = "<span id=\"head_span\"><a href=\"javascript:void(0)\" class=\"link-logout\" onclick='logout()' ><span class=\"rect\"></span> <span class=\"circle\"></span>退出</a></span>";
+                    userId=_data.userId;
+                    $("#loginbar").html(html);
+                    queryOrder(userId);
+                }else{
+                    alert("查询订单出问题了兄嘚");
+                }
+            },
+            error : function(){
+                alert('index error.');
+            }
+        });
+    });
+    function del(productId,userId){
+        if(productId==null||userId==null){
+            alert("删除参数有误");
+            return ;
+        }
+        if(confirm("您确定删除吗？")){
+            $.ajax({
+                url:"http://www.triplet.com/cart/delete?productId="+productId+"&userId="+userId,
+                dataType:"json",
+                type:"GET",
+                success:function (data) {
+                    if(data.status==200){
+                        window.location.href="http://www.triplet.com/mycart.html";
+                    }else{
+                        alert("删除有问题");
+                    }
+                },
+                error:function () {
+                    alert("删除发送失败");
+                }
+            });
+
+        }
+    }
+    function inputNum(productId,userId){
+
+        var num=document.getElementById(productId).value;
+        var numOld=document.getElementById("hid_"+productId).value;
+        if(num==""||num==null){
+            alert("num填写错误");
+            return;
+        }
+        if(num==numOld){
+            alert("没有变化数值");
+            return;
+        }
+        if(num>200){
+            alert("购买数量最大200");
+            return;
+        }
+        $.ajax({
+            url:"http://www.triplet.com/cart/update?productId="+productId+"&userId="+userId+"&num="+num,
+            dataType:"json",
+            type:"GET",
+            success:function (data) {
+                if(data.status==200){
+                    window.location.href="./mycart.html";
+                }else{
+                    alert("更新返回的不是成功数据");
+                }
+            },
+            error:function () {
+                alert("咋回事，改个num还能出错，没访问到cart系统吧兄弟");
+            }
+        });
+    }
+    function queryOrder(userId){
+        if(userId==""){
+            window.location.href="./login.html";
+            return;
+        }
+        $.ajax({
+            url:"http://www.triplet.com/order/query/"+userId,
+            dataType:"json",
+            type:"GET",
+            success:function(data){
+                if(data.length>0){
+                    var money=0;
+                    $.each(data,function(index, order){
+                        var orderId=order.orderId;
+                        var orderTime=timestampToTime(order.orderTime);
+                        var orderMoney=order.orderMoney;
+                        var payState=order.orderPaystate;
+                        var receiveState=order.orderReceivestate;
+                        var deliverState=order.orderDeliverstate;
+                        var orderItems=order.orderItems;
+                        if(payState==0){
+                            $("#orders").append("<dl class='Order_information'><dt><div class='design'style='width:20%;'><h3>订单信息</h3></div></dt><dd style='line-height:40px;'><p style='padding-top:10px'><font>订单编号</font>："+orderId+"</p><p><font>下单时间</font>："+orderTime+"</p><p><font>订单金额</font>："+orderMoney+"</p><p><font>支 付 状 态</font>：<font color='red'>未 支 付</font>&nbsp;&nbsp;<a href='javascript:void()' onclick='delOrder(\""+orderId+"\")'><button id='del' style='background:#000;background-image: url(../img/login/dl.png);border-radius:25px;color:#fff;width:8%;font-weight:bold'>删除订单</button></a>&nbsp;<a href='javascript:void()' onclick='payOrder(\""+orderId+"\")'><button id='del' style='background:#000;background-image: url(../img/login/dl.png);border-radius:25px;color:#fff;width:8%;font-weight:bold'>在线支付</button></a></p><p><font>所 属 用 户</font>："+order.userId+"</p><p><font>收 货 地 址</font>："+order.orderReceiverinfo+"</p><p style='padding-bottom:10px'><font>支 付 方 式</font>：在线支付</p></dd></dl>");
+                        }else{
+                        	if(deliverState == 0){
+                        		$("#orders").append("<dl class='Order_information'><dt><div class='design'style='width:20%;'><h3>订单信息</h3></div></dt><dd style='line-height:40px;'><p style='padding-top:10px'><font>订单编号</font>："+orderId+"</p><p><font>下单时间</font>："+orderTime+"</p><p><font>订单金额</font>："+orderMoney+"</p><p><font>支 付 状 态</font>：<font color='blue'>已 支 付</font>&nbsp;&nbsp;</p><p><font>所 属 用 户</font>："+order.userId+"</p><p><font>收 货 地 址</font>："+order.orderReceiverinfo+"</p><p style='padding-bottom:10px'><font>支 付 方 式</font>：在线支付</p></dd></dl>");
+                        	}else{
+                        		if(receiveState == 0){
+	                        		$("#orders").append("<dl class='Order_information'><dt><div class='design'style='width:20%;'><h3>订单信息</h3></div></dt><dd style='line-height:40px;'><p style='padding-top:10px'><font>订单编号</font>："+orderId+"</p><p><font>下单时间</font>："+orderTime+"</p><p><font>订单金额</font>："+orderMoney+"</p><p><font>支 付 状 态</font>：<font color='blue'>已 发 货</font>&nbsp;&nbsp;<a href='javascript:void()' onclick='receiveOrder(\""+orderId+"\")'><button id='del' style='background:#000;background-image: url(../img/login/dl.png);border-radius:25px;color:#fff;width:8%;font-weight:bold'>确认收货</button></a></p><p><font>所 属 用 户</font>："+order.userId+"</p><p><font>收 货 地 址</font>："+order.orderReceiverinfo+"</p><p style='padding-bottom:10px'><font>支 付 方 式</font>：在线支付</p></dd></dl>");
+	                        	}
+	                        	else{
+	                        		$("#orders").append("<dl class='Order_information'><dt><div class='design'style='width:20%;'><h3>订单信息</h3></div></dt><dd style='line-height:40px;'><p style='padding-top:10px'><font>订单编号</font>："+orderId+"</p><p><font>下单时间</font>："+orderTime+"</p><p><font>订单金额</font>："+orderMoney+"</p><p><font>支 付 状 态</font>：<font color='red'>已 收 货</font>&nbsp;&nbsp;</p><p><font>所 属 用 户</font>："+order.userId+"</p><p><font>收 货 地 址</font>："+order.orderReceiverinfo+"</p><p style='padding-bottom:10px'><font>支 付 方 式</font>：在线支付</p></dd></dl>");
+	                        	}
+                        	}
+                        }
+                        $("#orders").append("<div class='OrderPro'><table id='orderTable_"+orderId+"' ><tr><th >商 品 图 片</th><th  style='text-align:left;padding-left:100px;'>购 买 详 情</th></tr></table></div>");
+                        if(orderItems.length>0){
+                            $.each(orderItems,function (indexnumber,orderItem) {
+                                    var money=orderItem.num*orderItem.productPrice;
+                                    $("#orderTable_"+orderId).append("<tr><td ><img src='"+orderItem.productImage+"' ></td><td style='text-align:left;'><h4>商品名称："+orderItem.productName+"</h4><p>商品单价："+orderItem.productPrice+"元</p><p>商品数量："+orderItem.num+"件</p><span>总价：￥"+money+"元</span></td></tr>");
+                            });
+                        }
+                    });
+                    document.getElementById("span_2").innerText=money+"￥";
+                    //alert(money);
+                }else{
+                    alert("购物车是空的呀");
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+　　　　　　　　//弹出报错内容　　
+                 alert(XMLHttpRequest.status);
+                 alert(XMLHttpRequest.readyState);
+                 alert(textStatus);
+        }
+        });
+    }
+    function delOrder(orderId){
+        $.ajax({
+            url:"http://www.triplet.com/order/delete/"+orderId,
+            dataType:"json",
+            type:"GET",
+            success:function (data) {
+                if(data.status==200){
+                    window.location.href="http://www.triplet.com/myorder.html";
+                }else{
+                    alert("删除失败");
+                }
+            },
+            error:function () {
+                alert("请求删除订单失败");
+            }
+        })
+    }
+    //修改--支付订单
+    function payOrder(orderId){
+        $.ajax({
+            url:"http://www.triplet.com/order/pay/"+orderId,
+            dataType:"json",
+            type:"GET",
+            success:function (data) {
+                if(data.status==200){
+                    window.location.href="http://www.triplet.com/myorder.html";
+                }else{
+                    alert("支付失败");
+                }
+            },
+            error:function () {
+                alert("请求支付订单失败");
+            }
+        })
+    }
+    //修改--确认收货
+    function receiveOrder(orderId){
+        $.ajax({
+            url:"http://www.triplet.com/order/receive/"+orderId,
+            dataType:"json",
+            type:"GET",
+            success:function (data) {
+                if(data.status==200){
+                    window.location.href="http://www.triplet.com/myorder.html";
+                }else{
+                    alert("确认收货失败");
+                }
+            },
+            error:function () {
+                alert("请求确认收货失败");
+            }
+        })
+    }
+    //修改-时间戳转可视时间
+    function timestampToTime(timestamp){
+    	var time = new Date(timestamp);
+	    var y = time.getFullYear();
+	    var m = time.getMonth() + 1;
+	    m = m < 10 ? "0" + m : m;
+	    var d = time.getDate();
+	    d = d < 10 ? "0" + d : d;
+	 	
+	 	var h = time.getHours();
+	 	var min = time.getMinutes();
+	    return y + "/" + m + "/" + d + " " + h + ":" +min;
+    }
+    
+    function search(a){
+        var query=document.getElementById(a).value;
+        //alert(query);
+        window.location.href="./search.html?query="+query;
+
+    }
+</script>
+<div class="topDiv" id="header" >
+ 	
+</div>
+<div class="page-content">
+	<section id="blog" class="content-section">
+		<div class="section-heading">
+			<h1>My<br><em>Order 订单</em></h1>
+				<p>在Triple-T游戏推荐平台中，您能寻找到大部分感兴趣的游戏相关的资源。 
+				<br>祝您使用愉快。</p>
+		</div>
+		<div id="orders" style="width: 999px;">
+
+		</div>
+		
+	</section>
+
+</div>
+</body>
+</html>

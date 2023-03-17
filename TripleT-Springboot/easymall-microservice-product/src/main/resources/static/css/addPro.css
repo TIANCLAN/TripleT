@@ -1,0 +1,129 @@
+@CHARSET "UTF-8";
+body{
+	/*font-family: "微软雅黑";*/
+	font-size:12px;
+	color:#666666;
+}
+.section-heading{
+	border:1px solid transparent;
+	
+	width:50%;
+	float:left;
+	margin-left:28%;
+}
+.content{
+	float:right;
+	width:60%;
+	
+	margin-right:12.5%;
+}
+.addprod{
+	text-align:left;
+}
+.add {
+	box-shadow: 0 0 10px #343434;
+	background-color:#f3f3f3;
+}
+.add legend{
+	width:25%;
+	border-radius:5px;
+	text-align:center;
+	font-size:18px;
+	/*font-family:"黑体";*/
+	line-height:50px;
+	background:#343434;
+	color:white;
+}
+.add p{
+	margin-left:33%;
+	color:#343434;
+	font-size:16px;
+	font-weight:600;
+	padding:7px;
+}
+.add p input{
+	height:30px;
+	border:2px solid #343434;
+	border-radius:5px;
+	margin-left:8px;
+}
+.add p select{
+	height:30px;
+	width:20%;
+	text-align:center;
+	letter-spacing:5px;
+	border:2px solid #343434;
+	border-radius:5px;
+	margin-left:8px;
+}
+.add p select option{
+	letter-spacing:5px;
+	height:30px;
+	border-radius:5px;
+	font-size:14px;
+}
+
+.upload-wrap{
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+   	margin-left:45%;
+   	margin-top:-30%;
+    border-radius: 3px;
+    background: #343434;
+}
+.upload-wrap:hover{
+   	color:#000;
+    background-color: #45489a;
+}
+.upload-wrap .file-ele{
+    position: absolute;
+    top:0;
+    right:0;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.upload-wrap .file-open{
+    width:90px;
+    height:30px;
+    line-height:30px;
+    text-align: center;
+    border-radius:5px;
+    color:#fff;
+    
+}
+#buttons input[type='submit']{
+	width:15%;
+	float:left;
+	margin-left:5%;
+	color:#ffffff;
+	background-color: #45489a;
+}
+#buttons input[type='submit']:hover{
+   	background:#343434;
+   	
+}
+#exit{
+	
+	float:left;
+	border-radius:5px;
+	width:15%;
+	height:30px;
+	margin-left:8%;
+	color:#ffffff;
+	background-color: #000000;
+}
+#exit a {
+	border-radius:5px;
+	width:15%;
+	height:30px;
+	margin-left:8%;
+	color:#ffffff;
+	background-color: #000000;
+	text-decoration:none;
+}
+
+
+

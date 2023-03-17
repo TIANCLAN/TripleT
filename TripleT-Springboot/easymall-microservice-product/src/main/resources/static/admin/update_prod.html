@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>添加商品</title>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<link href="../css/managestyle.css" rel="stylesheet" type="text/css" th:href="@{/css/managestyle.css}"/>
+		<link href="../css/addPro.css" rel="stylesheet" type="text/css" th:href="@{/css/addPro.css}"/>
+		<script type="text/javascript">
+		    function imgPreview(fileDom){
+		        //判断是否支持FileReader
+		        if (window.FileReader) {
+		            var reader = new FileReader();
+		        } else {
+		            alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+		        }
+		
+		        //获取文件
+		        var file = fileDom.files[0];
+		        var imageType = /^image\//;
+		        //是否是图片
+		        if (!imageType.test(file.type)) {
+		            alert("请选择图片！");
+		            return;
+		        }
+		        //读取完成
+		        reader.onload = function(e) {
+		            //获取图片dom
+		            var img = document.getElementById("preview");
+		            //图片路径设置为读取的图片
+		            img.src = e.target.result;
+		        };
+		        reader.readAsDataURL(file);
+		    }
+		</script>
+	</head>
+	<body>
+	<div class="left">
+		<div th:include="admin/_left :: .myleft"></div>
+		</div>
+	<section id="blog" class="content-section" >
+		<div class="section-heading">
+			<h1>Update<br /><em>Product</em></h1>
+			<p>在Triple-T游戏推荐平台中，您能寻找到大部分感兴趣的游戏相关的资源。
+				<br />祝您使用愉快。</p>
+		</div>
+	<div class="content">
+		
+	<div class="right" >	
+	<div class="addprod">
+	<!--<jsp:useBean id="myproducts"  class="easymall.pojo.MyProducts" scope="request" ></jsp:useBean>-->
+	<form  method="POST"
+	  enctype="multipart/form-data" th:action="@{/products/admin/update(id=${id})}">
+		<fieldset class="add">
+		<legend>修改一个游戏产品</legend>		
+		<p>
+            <label>游 &nbsp;戏 &nbsp;I &nbsp;D:</label>
+			<label th:text="${id}"></label>
+        </p>	
+		<p>
+            <label>游 &nbsp;戏 &nbsp;名 &nbsp;称:</label>
+            <input name="name" th:value="${myproducts.name}" />
+        </p><p>
+            <label>游 &nbsp;戏 &nbsp;价 &nbsp;格:</label>
+            <input name="price" th:value="${myproducts.price}" />
+        </p>
+        <p>
+            <label >游 &nbsp;戏 &nbsp;类 &nbsp;别:&nbsp;  </label>
+            <label th:text="${product.category}"></label>
+        </p><p>
+            <label>更 &nbsp;改 &nbsp;类 &nbsp;别:</label>
+            <select name="category"  >
+            <!-- 通过循环语句将所有商品类别显示在下拉列表中 -->
+				<div th:each="c:${categories}">
+					<option th:text="${c}"></option>
+				</div>
+			</select>
+        </p><p>
+            <label>库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存:</label>
+            <input name="pnum" th:value="${myproducts.pnum}"/>
+        </p> <p >
+            <label>图&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;片:</label>
+            
+            <div class="upload-wrap anticon" nv-file-drop="" uploader="uploader">
+            	<input type="file" name="imgurl" onchange="imgPreview(this)" class="file-ele"/> 
+        		<div class="file-open"><em class="icon icon-upload"></em>&nbsp;upload</div>    
+			</div>
+
+            <img  th:src="${product.imgurl}" id="preview"  style="width:40%;margin-left:30%;margin-top:15px" />
+        </p><p>
+            <label>商品描述:</label>
+            <textarea name="description" style="width:50%;border:2px solid #343434;
+	border-radius:5px;"/>
+        </p><p id="buttons" style="height:20%">
+            <input id="submit" type="submit" value="修改" />
+            
+            <button id="exit">
+            	<a href="./prodlist">
+            		退出
+            	</a>
+            </button>
+        </p>
+        
+    	</fieldset>
+    	<!-- 取出所有验证错误 -->
+    	<!--<errors path="*"/>-->
+	</form>
+	</div>
+	</div><!-- right结束 -->
+	</div><!-- content结束 -->		
+	</section>
+	
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.scnu.order.mapper.OrderMapper">
+<!-- saveOrder -->
+<insert id="saveOrder" parameterType="Order">
+	<!-- insert t_order -->
+	insert into t_order (order_id,order_money,order_paystate,order_receivestate,order_deliverstate,order_receiverinfo,
+	order_time,user_id) values (#{orderId},#{orderMoney},0,0,0,
+	#{orderReceiverinfo},#{orderTime},#{userId});
+	<!-- insert t_order_item -->
+	<foreach collection="orderItems" item="item" separator=";">
+		insert into t_order_item (order_id,product_id,num,product_name,product_image,product_price)
+		values (#{orderId},#{item.productId},#{item.num},#{item.productName},#{item.productImage},#{item.productPrice})
+	</foreach>
+</insert>
+<!-- cleanCart -->
+<delete id="cleanCart" parameterType="String">
+	delete from t_cart where user_id=#{userId};
+</delete>
+<!-- queryOrder -->
+<resultMap type="Order" id="OrderRM">
+	<!-- 主键封装，单独指定 -->
+	<id property="orderId" column="order_id" />
+	<collection property="orderItems" javaType="List" ofType="OrderItem"
+		column="order_id" select="queryOrderItems">
+	</collection>
+</resultMap>
+<select id="queryOrder" parameterType="String" resultMap="OrderRM">
+	select * from t_order where user_id=#{userId} order by order_time desc
+</select>
+<select id="queryOrderItems" parameterType="String" resultType="OrderItem">
+	select * from t_order_item where order_id=#{orderId}
+</select>
+<!-- 删除订单 -->
+<delete id="deleteOrder" parameterType="String">
+	delete from t_order_item where order_id=#{orderId};
+	delete from t_order where order_id=#{orderId};
+</delete>
+<!-- payOrder -->
+<update id="payOrder" parameterType="String">
+	update t_order set order_paystate=1 where order_id=#{orderId}
+</update>
+<!-- receiveOrder -->
+<update id="receiveOrder" parameterType="String">
+	update t_order set order_receivestate=1 where order_id=#{orderId}
+</update>
+<!-- queryallOrder -->
+<resultMap type="Order" id="OrderALL">
+	<!-- 主键封装，单独指定 -->
+	<id property="orderId" column="order_id" />
+	<collection property="orderItems" javaType="List" ofType="OrderItem"
+		column="order_id" select="queryAllOrderItems">
+	</collection>
+</resultMap>
+<select id="queryallOrder" parameterType="String" resultMap="OrderALL">
+	select * from t_order order by order_time desc
+</select>
+<select id="queryAllOrderItems" parameterType="String" resultType="OrderItem">
+	select * from t_order_item where order_id=#{orderId}
+</select>
+<!-- deliverOrder -->
+<update id="deliverOrder" parameterType="String">
+	update t_order set order_deliverstate=1 where order_id=#{orderId}
+</update>
+</mapper>

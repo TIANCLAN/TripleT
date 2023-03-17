@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
+        <module name="easymall-common-rediscluster" />
+        <module name="easymall-common-repository" />
+        <module name="easymall-common-resources" />
+        <module name="easymall-micro-zuul" />
+        <module name="easymall-microservice-cart" />
+        <module name="easymall-microservice-order" />
+        <module name="easymall-microservice-product" />
+        <module name="easymall-microservice-use" />
+        <module name="echarts" />
+        <module name="eureka-server" />
+        <module name="eureka-server (2)" />
+        <module name="eureka-server2" />
+        <module name="springboot-redis-test01" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="config-client" target="1.8" />
+      <module name="config-server" target="1.8" />
+      <module name="easymall-common-rediscluster" target="1.8" />
+      <module name="easymall-common-repository" target="1.8" />
+      <module name="easymall-common-resources" target="1.8" />
+      <module name="easymall-micro-zuul" target="1.8" />
+      <module name="easymall-microservice-cart" target="1.8" />
+      <module name="easymall-microservice-order" target="1.8" />
+      <module name="easymall-microservice-pic" target="1.8" />
+      <module name="easymall-microservice-product" target="1.8" />
+      <module name="easymall-microservice-use" target="1.8" />
+      <module name="easymall-microservice-user" target="1.8" />
+      <module name="easymall-parent" target="1.8" />
+      <module name="echarts" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="eureka-server (2)" target="1.8" />
+      <module name="eureka-server2" target="1.8" />
+      <module name="seckill" target="1.8" />
+      <module name="springboot-redis-test01" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="seckill" options="-parameters" />
+    </option>
+  </component>
+</project>

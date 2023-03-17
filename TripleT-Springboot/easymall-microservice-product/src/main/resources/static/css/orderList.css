@@ -1,0 +1,160 @@
+@charset "gb2312";
+body {
+	/*font-family: "微软雅黑", Arial, Helvetica, sans-serif;*/
+}
+*{margin:0px;padding:0px;}
+ul li{list-style:none;}
+.clear{clear:both;}
+.lf{float:left;}
+.rt{float:right;}
+/*---订单列表----------------------------------------------------------------------*/
+.Order_information{
+	text-align:left;
+/*<<<<<<< HEAD*/
+ 	width:999px;
+ 	margin-bottom:0px;
+}
+.section-heading{
+	margin-top:80px;
+	margin-left:29%;
+	margin-bottom: 30px;
+  text-align: center;
+}
+.section-heading h1 {
+  display: block;
+  margin: 0px;
+}
+.section-heading p {
+  position: relative;
+  margin: 0px;
+}
+.Order_information dt{
+	background:#f3f3f3;
+	height:50px;
+	margin:22px 0px 0px 0px;
+	border-bottom: 10px solid #343434;
+}
+
+.Order_information dt h3{
+	font-size:20px;
+	/*font-family:黑体;*/
+	text-indent:50px;
+	line-height:50px;
+	color:white;
+	text-align:left;
+	
+	list-style: none;
+	padding: 0px;
+	width: 100%;
+	background-color: #343434;
+	
+}
+.Order_information dd{
+	font-size:15px;
+	/*font-family:"黑体";*/
+	line-height:30px;
+	padding-left:18px;
+	color:#333333;
+	background:#f3f3f3;
+}
+.Order_information dd p{
+	font-size:15px;
+	line-height:30px;
+	/*font-family:"黑体";*/
+	color:#333333;
+	background:#f3f3f3;
+}
+.Order_information dd p font{
+	font-weight:bold;
+	letter-spacing:2px
+}
+.Order_information dd img{ 
+	vertical-align:middle;
+	border:none;
+}
+.OrderPro table{
+	width:999px;
+	border:1px solid #000000;
+	cellpadding:0;
+	cellspacing:1;
+	background:#f3f3f3;
+	color:#333333;
+	margin-top:-10px;
+}
+.OrderPro table tr th{
+	width:276px; 
+	height:50px;
+	text-align:center;
+	font-size:1.2em;
+	valign:middle;
+	bgcolor:#f3f3f3;
+	border-bottom: 3px solid #343434;
+	border-top: 3px solid #343434;
+}
+.OrderPro table tr td{
+	text-align:center;
+	padding-left:50px;
+	valign:middle; 
+	bgcolor:#f3f3f3;
+}
+.OrderPro table tr td h4 {
+  padding-top: 7.5px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 21px;
+  font-size:15px;
+  font-weight: 600;
+  color: #232323;
+  letter-spacing: 0.5px;
+  text-align:left;
+}
+
+.OrderPro table tr td span {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #343434;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  text-align:left;
+}
+.OrderPro table tr td img{
+	margin:15px 0 15px 0;
+	align:center;
+	max-width: 230px;
+	
+  	overflow: hidden;
+}
+.Order_price{
+	width:500px;
+	background-color:#343434;
+	color:#FFFFFF;
+	font-size:30px;
+	margin:5px 0px 40px;
+	
+	font-family:黑体;
+	border-bottom: 1px solid #CCC;
+	text-shadow:#696969 0 0 2px;
+	
+}
+input[type='submit']{
+	background-image: url("../img/login/dl.png");
+	
+	width:80px;
+	height:35px;
+	line-height:35px;
+	border-style:none;
+	font-size:15px;
+	font-weight:bold;
+	border-radius:25px;
+	color:white;
+	cursor: pointer;
+}
+#no_order_info{
+	border:1px solid transparent;
+	font-size:30px;
+	color:#CA141D;
+	text-align:center;
+	margin: 0px 0px;
+
+}

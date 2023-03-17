@@ -1,0 +1,163 @@
+@charset "utf-8";
+body{
+	margin:0px;
+	padding:0px;
+	/*font-family: "微软雅黑";*/
+	font-size: 12px;
+	color:#666666;
+}
+
+#content{
+
+	width:100%;
+	float:right;
+}
+/*搜索条*/
+#content #search_div{
+	border: 1px solid #D4D4D4;
+	padding:8px;
+}
+#content #search_div .input_span{
+	margin: 0px 0px 0px 15px;
+}
+#content #search_div input[type=text]{
+	border-radius:10px;
+	border: 3px solid #343434;
+	height:20px;
+}
+#content #search_div input[name=name],#content #search_div input[name=category]{
+	width:130px;
+	height:25px;
+}
+#content #search_div input[name=minprice],#content #search_div input[name=maxprice]{
+	width:50px;
+	height:25px;
+}
+
+#content #search_div input[type=submit]{
+	
+	border-style:none;
+	width:58px;
+	height:28px;
+	font-weight:bolder;
+	font-size:1em;
+	cursor: pointer;
+	color:#fff;
+	background-color:#45489a;	
+	margin-left:5px;
+	vertical-align:middle; 
+}
+
+#content #search_div input[type=submit]:hover{
+	vertical-align:middle; 
+	color:#45489a;
+	background-color:#fff;	
+	margin-left:5px;
+}
+
+.content_form{
+	list-style: none;
+  	margin-top:1%;
+  	padding: 0px;
+  	height: 90px;
+  	width: 100%;
+  	background-color: #eee;
+  	border-bottom: 10px solid #45489a;
+  	text-align:center;
+	vertical-align:middle;
+}
+
+.content_form div{
+	width:100%;
+	height:100%;
+	margin-top:2.5%;
+	text-align:center;
+	display:inline-block;
+	vertical-align:middle;
+	
+}
+
+.content_form span{
+	margin-right:3%;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #45489a;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  
+}
+
+/*商品信息*/
+#prod_content{
+	margin-left:80%;
+	width:88%;
+	float:right;
+
+}
+#prod_content .prod_div{
+	width:222px;
+	height:347px;
+	border: 1px solid #D4D4D4;
+	margin-top:15px;
+	margin-right:19px;
+	float:left;
+}
+
+#prod_content .prod_div:nth-child(5),#prod_content .prod_div:nth-child(10),
+#prod_content .prod_div:nth-child(15),#prod_content .prod_div:nth-child(20),
+#prod_content .prod_div:nth-child(25),#prod_content .prod_div:nth-child(30),
+#prod_content .prod_div:nth-child(35),#prod_content .prod_div:nth-child(40),
+#prod_content .prod_div:nth-child(45),#prod_content .prod_div:nth-child(50){
+	margin-right:0px;
+}
+
+#prod_content .prod_div img{
+	height: 218px;
+    width: 222px;
+	width:100%; 
+}
+#prod_content #prod_name_div{
+	font-size:12px;
+	margin-top:8px;
+	text-align: center;
+}
+#prod_content #prod_price_div{
+	font-size:22px;
+	margin-top:22px;
+	text-align: center;
+	color:#CC0000;
+	
+}
+#prod_content #gotocart_div{
+	float:left;
+	width:110px;
+	height:32px;
+	margin-top:15px;
+	text-align: center;
+	line-height:32px;
+	border-top: 1px solid #D4D4D4;
+}
+#gotocart_div a{
+	display: block;
+	width:110px;
+	height:32px;
+	color:#666666;
+	text-decoration: none;
+}
+#gotocart_div a:hover{
+	background-color: #FF0000;
+	color:#fff;
+}
+
+#say_div{
+	float:left;
+	width:110px;
+	height:32px;
+	margin-top:15px;
+	text-align: center;
+	line-height:32px;
+	border-left: 1px solid #D4D4D4;
+	border-top: 1px solid #D4D4D4;
+}
+

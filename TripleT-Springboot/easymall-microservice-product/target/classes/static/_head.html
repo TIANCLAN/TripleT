@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="head">
+<head>
+    <title>left</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/fontAwesome.css" th:href="@{/css/fontAwesome.css}"/>
+    <link rel="stylesheet" href="css/light-box.css" th:href="@{/css/light-box.css}"/>
+    <link rel="stylesheet" href="css/owl-carousel.css" th:href="@{/css/owl-carousel.css}"/>
+    <link rel="stylesheet" href="css/templatemo-style.css" th:href="@{/css/templatemo-style.css}"/>
+    <link rel="stylesheet" href="css/head.css" th:href="@{/css/head.css}"/>
+
+</head>
+
+<div class="sidebar-navigation hidde-sm hidden-xs">
+    <div class="logo">
+        <a href="#"><img th:src="@{/img/head/TripleTLogo.png}" /></a>
+    </div>
+
+    <nav style="margin-top:10%;">
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <span class="rect"></span>
+                    <span class="circle"></span>
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a id="goto_order" th:href="@{/products/prodlist}">
+                    <span class="rect"></span>
+                    <span class="circle"></span>
+                    游戏
+                </a>
+            </li>
+            <li>
+                <a id="goto_order" th:href="@{/products/ranklist}">
+                    <span class="rect"></span>
+                    <span class="circle"></span>
+                    热门排行榜
+                </a>
+            </li>
+
+            <li>
+                <a id="goto_cart" href="../mycart.html">
+                    <span class="rect"></span>
+                    <span class="circle"></span>
+                    购物车
+                </a>
+            </li>
+            <li>
+                <a id="goto_order" href="../myorder.html">
+                    <span class="rect"></span>
+                    <span class="circle"></span>
+                    订单
+                </a>
+            </li>
+
+            <!--<c:if test="${ empty sessionScope.user }">-->
+                <li>
+                    <a href="../login.html">
+                        <span class="rect"></span>
+                        <span class="circle"></span>
+                        登录
+                    </a>
+                </li>
+                <li>
+                    <a href="../regist.html">
+                        <span class="rect"></span>
+                        <span class="circle"></span>
+                        注册
+                    </a>
+                </li>
+                <li>
+                    <a id="goto_admin" href="../admin_login.html">
+                        <span class="rect"></span>
+                        <span class="circle"></span>
+                        后台登录
+                    </a>
+                </li>
+            <!--</c:if>-->
+
+            <!--<c:if test="${ !(empty sessionScope.user) }">-->
+                <!--<li>-->
+                    <!--<a href="index/logout">-->
+                        <!--<span class="rect"></span>-->
+                        <!--<span class="circle"></span>-->
+                        <!--退出-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</c:if>-->
+
+
+        </ul>
+    </nav>
+    <ul class="social-icons">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+    </ul>
+</div>
+</html>

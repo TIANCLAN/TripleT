@@ -1,0 +1,6 @@
+cn\edu\scnu\StarterUserCenter.class
+cn\edu\scnu\user\shiro\UserRealm.class
+cn\edu\scnu\user\service\UserService.class
+cn\edu\scnu\user\controller\UserController.class
+cn\edu\scnu\user\mapper\UserMapper.class
+cn\edu\scnu\user\shiro\ShiroConfig.class
